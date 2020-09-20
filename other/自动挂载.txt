@@ -1,0 +1,6 @@
+要禁用Nautilus自动挂载，请在终端中使用此命令
+
+gsettings set org.gnome.desktop.media-handling automount false
+要再次启用它，请打开终端并使用此命令
+
+gsettings set org.gnome.desktop.media-handling automount true

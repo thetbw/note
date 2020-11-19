@@ -1,0 +1,3 @@
+[submodule "WorkNote"]
+	path = WorkNote
+	url = git@gitee.com:thetbw/WorkNote.git

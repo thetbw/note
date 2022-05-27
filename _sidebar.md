@@ -1,3 +1,4 @@
+  - [ffmpeg](/ffmpeg.md)
   - [git_study](/git_study.md)
   - html&css
     - [tips](/html&css/tips.md)
@@ -8,6 +9,7 @@
     - java_framework
       - spring
         - [AOP](/java/java_framework/spring/AOP.md)
+        - [Spring的数据绑定](/java/java_framework/spring/Spring的数据绑定.md)
         - [事务](/java/java_framework/spring/事务.md)
         - [事务与数据源](/java/java_framework/spring/事务与数据源.md)
         - [动态代理](/java/java_framework/spring/动态代理.md)
@@ -30,6 +32,8 @@
     - [特殊类](/java/特殊类.md)
     - [随笔](/java/随笔.md)
   - js
+    - [html元素双指缩放](/js/html元素双指缩放.md)
+    - [html元素截图](/js/html元素截图.md)
     - [方法防抖](/js/方法防抖.md)
   - kotlin
     - [随笔](/kotlin/随笔.md)
@@ -38,6 +42,7 @@
     - [ssh](/linux/ssh.md)
     - [ssh代理](/linux/ssh代理.md)
     - [ubuntu坑](/linux/ubuntu坑.md)
+    - [后台与daemon](/linux/后台与daemon.md)
     - [用户相关](/linux/用户相关.md)
     - [脚本相关](/linux/脚本相关.md)
     - [解压&压缩相关](/linux/解压&压缩相关.md)
@@ -47,6 +52,8 @@
     - [Postman脚本](/other/Postman脚本.md)
   - pages
     - [contents](/pages/contents.md)
+  - python
+    - [基础](/python/基础.md)
   - sql
     - [H2](/sql/H2.md)
     - mysql
@@ -73,5 +80,6 @@
     - [注意点](/vue/注意点.md)
   - windows
     - [BAT编写教程](/windows/BAT编写教程.md)
+  - [_navbar](/_navbar.md)
   - 解决方案
     - [websocket分布式集群](/解决方案/websocket分布式集群.md)

@@ -49,6 +49,7 @@
 5. 合并某分支到当前分支: `git merge 'name'`
 6. 删除分支: `gir branch -d 'name'`
 7. --no-ff:普通合并模式
+8. 从指定tag创建一个新分支 `git checkout tags/{tag} -b {分支名称}`
 
 
 
@@ -56,5 +57,10 @@
 
 https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE
 
-### 替换分支
+### 
 
+### 其他
+
+* gitattributes 
+
+  > 可以指定git换行符 https://git-scm.com/docs/gitattributes

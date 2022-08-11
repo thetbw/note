@@ -1,3 +1,6 @@
+  - blender
+    - [Blender快捷键](/blender/Blender快捷键.md)
+    - [Blender概念](/blender/Blender概念.md)
   - [ffmpeg](/ffmpeg.md)
   - [git_study](/git_study.md)
   - html&css
@@ -34,6 +37,7 @@
   - js
     - [html元素双指缩放](/js/html元素双指缩放.md)
     - [html元素截图](/js/html元素截图.md)
+    - [判断界面是否有滚动条](/js/判断界面是否有滚动条.md)
     - [方法防抖](/js/方法防抖.md)
   - kotlin
     - [随笔](/kotlin/随笔.md)

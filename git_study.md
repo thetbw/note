@@ -1,3 +1,5 @@
+> 补充，git设置代理 https://ericclose.github.io/git-proxy-config.html
+
 ## git常用命令
 
 1. `git init`:

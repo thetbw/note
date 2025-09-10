@@ -19,7 +19,7 @@ jobs:
           node-version: '22.x'
 
       - name: generate sidebar
-        run: node .\generate-sidebar.js
+        run: node ./generate-sidebar.js
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
   deploy:

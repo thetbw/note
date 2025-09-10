@@ -27,6 +27,10 @@ jobs:
           name: github-pages
           retention-days: 1
   deploy:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{steps.deployment.outputs.page_url}}

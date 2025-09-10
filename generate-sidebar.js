@@ -15,13 +15,20 @@ async function scanDirectory(dir, baseDir = dir) {
     const entries = await fs.readdir(dir, { withFileTypes: true });
 
     for (const entry of entries) {
+        // 忽略以_开头的文件和目录
+        if (entry.name.startsWith('_') || entry.name.startsWith('README.md')) {
+            continue;
+        }
+
         const fullPath = path.join(dir, entry.name);
         const relativePath = path.relative(baseDir, fullPath);
 
-        // 忽略以_开头的文件和目录
-        if (entry.name.startsWith('_') || entry.name.startsWith('README')) {
-            continue;
-        }
+        // 对名称进行URL编码（处理非法字符），但保留原始名称用于显示
+        const encodedName = encodeURIComponent(entry.name);
+        const encodedRelativePath = relativePath
+            .split(path.sep)
+            .map(segment => encodeURIComponent(segment))
+            .join('/'); // 使用/作为路径分隔符，符合URL规范
 
         if (entry.isDirectory()) {
             // 递归处理子目录
@@ -29,17 +36,21 @@ async function scanDirectory(dir, baseDir = dir) {
             if (subDirFiles.length > 0) {
                 results.push({
                     type: 'directory',
-                    name: entry.name,
-                    path: relativePath,
+                    name: entry.name, // 原始名称用于显示
+                    encodedName: encodedName, // 编码后的名称用于路径
+                    path: encodedRelativePath, // 编码后的相对路径
                     children: subDirFiles
                 });
             }
         } else if (entry.isFile() && path.extname(entry.name) === '.md') {
             // 处理Markdown文件
+            const fileNameWithoutExt = path.basename(entry.name, '.md');
             results.push({
                 type: 'file',
-                name: path.basename(entry.name, '.md'), // 去除.md扩展名
-                path: relativePath
+                name: fileNameWithoutExt, // 原始名称用于显示
+                encodedName: encodeURIComponent(fileNameWithoutExt), // 编码后的名称
+                path: encodedRelativePath, // 编码后的相对路径
+                originalPath: relativePath // 保留原始路径用于参考
             });
         }
     }
@@ -73,12 +84,12 @@ function generateSidebarMarkdown(items, level = 0) {
 
     for (const item of items) {
         if (item.type === 'directory') {
-            // 目录项
+            // 目录项：显示原始名称，使用编码后的路径
             markdown += `${indent}- [${item.name}](${item.path}/)\n`;
             // 递归处理子项，层级+1
             markdown += generateSidebarMarkdown(item.children, level + 1);
         } else if (item.type === 'file') {
-            // 文件项
+            // 文件项：显示原始名称，使用编码后的路径
             markdown += `${indent}- [${item.name}](${item.path})\n`;
         }
     }
